@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    {{--<link rel="stylesheet" href="/css/main.css">--}}
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <h1>Hello</h1>

@@ -13,15 +13,21 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
     "jshint": "^2.9.5",
     "jshint-loader": "^0.8.4",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-libs-browser": "^2.1.0",
+    "sass-loader": "^6.0.7",
+    "uglify-js": "^2.4.*",
+    "uglify-loader": "^2.0.0",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
+    "node-sass": "^4.0.0",
     "popper.js": "^1.14.1"
   },
   "peerDependencies": {},
