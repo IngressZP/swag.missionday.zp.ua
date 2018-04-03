@@ -6,23 +6,26 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "build": "gulp",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.11",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
     "jshint": "^2.9.5",
-    "jshint-loader": "^0.8.4",
-    "mini-css-extract-plugin": "^0.4.0",
+    "merge-stream": "^1.0.1",
     "node-libs-browser": "^2.1.0",
-    "sass-loader": "^6.0.7",
-    "uglify-js": "^2.4.*",
-    "uglify-loader": "^2.0.0",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "uglify-js": "^2.4.*"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
