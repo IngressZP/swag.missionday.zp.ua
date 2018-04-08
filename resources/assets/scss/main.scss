@@ -1,1 +1,43 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #eee;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.header {
+  &__logo {
+    max-width: 100%;
+  }
+
+  &-contacts {
+    word-spacing: 4px;
+
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__site-link {
+    //text-decoration: underline;
+    color: black;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
