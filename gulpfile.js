@@ -1,11 +1,9 @@
 const gulp = require('gulp');
 const watch = require('gulp-watch');
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const sass = require('gulp-sass');
-const babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
 const webpackConfig = require('./webpack.config');
 const webpackStream = require('webpack-stream');
 
@@ -26,7 +24,15 @@ gulp.task('build:js', function () {
         .pipe(gulp.dest('./public/js'))
 });
 
-gulp.task('build', ['build:js', 'build:css']);
+gulp.task('build:img', function () {
+    gulp.src('./resources/assets/img/*')
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('./public/img'))
+});
+
+gulp.task('build', ['build:js', 'build:css', 'build:img']);
 
 gulp.task('watch', function () {
     watch(['./resources/assets/js/*', './resources/assets/scss/*'], function () {
