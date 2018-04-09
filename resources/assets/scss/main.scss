@@ -1,43 +1,70 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "fonts.scss";
 
-html,
-body {
-  font-family: 'Roboto', sans-serif;
-}
+header {
+    background-image: url('/img/bg_header.jpg');
+    padding: 45px 0;
 
-body {
-  background-color: #eee;
-}
-
-.container {
-  background-color: #fff;
-}
-
-.header {
-  &__logo {
-    max-width: 100%;
-  }
-
-  &-contacts {
-    word-spacing: 4px;
-
-    a {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
+    .container {
+      background-color: rgba(255, 255, 255, 0.3);
     }
-  }
 
-  &__site-link {
-    //text-decoration: underline;
-    color: black;
+    .header {
+      &__logo {
+        height: 262px;
+        width: auto;
+      }
 
-    a {
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
+      &__title {
+        font-family: "GeomGraphic";
+        color: #fff;
+        font-size: 80px; 
+        line-height: 1;
+        span {
+          color: rgb(255, 124, 58);
+        }
       }
     }
-  }
 }
+
+// html,
+// body {
+//   font-family: 'Roboto', sans-serif;
+// }
+//
+// body {
+//   background-color: #eee;
+// }
+//
+// .container {
+//   background-color: #fff;
+// }
+//
+// .header {
+//   &__logo {
+//     max-width: 100%;
+//   }
+//
+//   &-contacts {
+//     word-spacing: 4px;
+//
+//     a {
+//       display: inline-block;
+//       width: 30px;
+//       height: 30px;
+//     }
+//   }
+//
+//   &__site-link {
+//     //text-decoration: underline;
+//     color: black;
+//
+//     a {
+//       text-decoration: underline;
+//
+//       &:hover {
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }

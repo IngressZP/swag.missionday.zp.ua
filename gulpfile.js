@@ -15,6 +15,11 @@ gulp.task('build:css', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('build:fonts', function () {
+    gulp.src('./resources/assets/fonts/**')
+        .pipe(gulp.dest('./public/fonts'));
+});
+
 gulp.task('build:js', function () {
     gulp.src('./resources/assets/js/main.js')
         .pipe(webpackStream(webpackConfig))
@@ -32,7 +37,7 @@ gulp.task('build:img', function () {
         .pipe(gulp.dest('./public/img'))
 });
 
-gulp.task('build', ['build:js', 'build:css', 'build:img']);
+gulp.task('build', ['build:js', 'build:css', 'build:img', 'build:fonts']);
 
 gulp.task('watch', function () {
     watch(['./resources/assets/js/*', './resources/assets/scss/*'], function () {
