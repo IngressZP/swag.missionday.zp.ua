@@ -3,11 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Image;
-use App\Models\Category;
+use \Dimsav\Translatable\Translatable;
 
 class Product extends Model
 {
+    use Translatable;
+
+    public $translatedAttributes = [
+        'name',
+        'description'
+    ];
+
+    protected $fillable = [
+        'price',
+        'category_id',
+    ];
+
+
     public function category() {
         return $this->belongsTo(Category::class);
     }
