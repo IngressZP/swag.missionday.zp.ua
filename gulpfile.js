@@ -33,7 +33,7 @@ gulp.task('build:js', function () {
 });
 
 gulp.task('build:img', function () {
-    gulp.src('./resources/assets/img/*')
+    gulp.src('./resources/assets/img/**/*')
         .pipe(imagemin({
             progressive: true
         }))
