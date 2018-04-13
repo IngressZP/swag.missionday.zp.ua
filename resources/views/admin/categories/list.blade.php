@@ -13,8 +13,9 @@
                 <a href="{{ route('admin.categories.edit', ['category' => $cat->id]) }}" class="btn btn-primary">
                     <i class="fas fa-pencil-alt"></i>
                 </a>
-                <form action="{{ route('admin.categories.delete', ['category' => $cat->id]) }}" method="delete" class="d-inline-block">
+                <form action="{{ route('admin.categories.delete', ['category' => $cat->id]) }}" method="post" class="d-inline-block">
                     {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="delete">
                     <button class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i>
                     </button>
@@ -22,4 +23,9 @@
             </div>
         </div>
     @endforeach
+    <div class="row justify-content-center">
+        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Добавить
+        </a>
+    </div>
 @endsection

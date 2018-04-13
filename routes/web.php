@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     # Category routes
     Route::get('/categories', 'CategoryController@index')
         ->name('admin.categories.index');
+    Route::get('/categories/create', 'CategoryController@create')
+        ->name('admin.categories.create');
+    Route::post('/categories/create', 'CategoryController@store')
+        ->name('admin.categories.store');
     Route::get('/category/edit/{category}', 'CategoryController@edit')
         ->name('admin.categories.edit');
     Route::post('/category/update/{category}', 'CategoryController@update')
@@ -43,6 +47,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     # Product routes
     Route::get('/products', 'ProductController@index')
         ->name('admin.products.index');
+    Route::get('/products/create', 'ProductController@create')
+        ->name('admin.products.create');
+    Route::post('/products/create', 'ProductController@store')
+        ->name('admin.products.store');
     Route::get('/product/edit/{product}', 'ProductController@edit')
         ->name('admin.products.edit');
     Route::post('/product/update/{product}', 'ProductController@update')

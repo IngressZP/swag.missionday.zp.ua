@@ -15,6 +15,24 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function create() {
+        return view('admin.categories.create');
+    }
+
+    public function store(Request $request) {
+        $lang = $request->get('lang');
+        $title = $request->get('title');
+
+        $category = Category::create([
+            'slug' => str_slug($title),
+            $lang => [
+                'title' => $title
+            ],
+        ]);
+
+        return redirect()->route('admin.categories.index');
+    }
+
     public function edit(Category $category) {
         return view('admin.categories.edit', [
             'category' => $category
@@ -36,6 +54,6 @@ class CategoryController extends Controller
     public function delete(Category $category) {
         $category->delete();
 
-        return redirect()->route('admin.categories.list');
+        return redirect()->route('admin.categories.index');
     }
 }

@@ -2,11 +2,11 @@
 
 @section('content')
     <h3 class="text-center mt-2 mb-5">
-        Категория: {{ $category->title }}
+        Новая категория
     </h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="{{ route('admin.categories.update', ['category' => $category->id]) }}" method="post">
+            <form action="{{ route('admin.categories.store') }}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="lang" value="{{ App::getLocale() }}">
 
@@ -15,7 +15,7 @@
                         Название
                     </label>
                     <input type="text" name="title" class="form-control" id="title" required
-                           placeholder="Название категории" value="{{ $category->title or '' }}">
+                           placeholder="Название категории">
                 </div>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Сохранить

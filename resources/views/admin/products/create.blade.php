@@ -2,11 +2,11 @@
 
 @section('content')
     <h3 class="text-center mt-2 mb-5">
-        Товар: {{ $product->name }}
+        Новый товар
     </h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="{{ route('admin.products.update', ['product' => $product->id]) }}" method="post">
+            <form action="{{ route('admin.products.store') }}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="lang" value="{{ App::getLocale() }}">
 
@@ -15,14 +15,14 @@
                         Название
                     </label>
                     <input type="text" name="name" class="form-control" id="title" required
-                           placeholder="Название товара" value="{{ $product->name or '' }}">
+                           placeholder="Название товара">
                 </div>
                 <div class="form-group">
                     <label for="price">
                         Цена
                     </label>
                     <input type="number" name="price" class="form-control" id="price" required
-                           placeholder="Цена товара" value="{{ $product->price }}" min="0">
+                           placeholder="Цена товара" min="0">
                 </div>
                 <div class="form-group">
                     <label for="category">
@@ -44,7 +44,7 @@
                         Описание
                     </label>
                     <textarea name="description" id="description" class="form-control"
-                              required placeholder="Описание товара">{{ $product->description or '' }}</textarea>
+                              required placeholder="Описание товара"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Сохранить

@@ -10,8 +10,9 @@
                 {{ $order->created_at->format('d-m-Y H:i') }}
             </div>
             <div class="col-md-3 text-right">
-                <form action="{{ route('admin.orders.delete', ['order' => $order->id]) }}" method="delete" class="d-inline-block">
+                <form action="{{ route('admin.orders.delete', ['order' => $order->id]) }}" method="post" class="d-inline-block">
                     {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="delete">
                     <button class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i>
                     </button>
