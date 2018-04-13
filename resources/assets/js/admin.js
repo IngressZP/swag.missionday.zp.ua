@@ -2,4 +2,4 @@ import $ from "jquery";
 import "bootstrap";
 
 
-console.log("hello");
+console.log("admin");
