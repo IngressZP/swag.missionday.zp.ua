@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'PageController@index')
+    ->name('index');
+
+Route::get('/login', 'PageController@login')
+    ->name('login');
+
+Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'name' => 'admin'], function () {
+    Route::get('/', 'PageCotroller@adminIndex')
+        ->name('index');
 });
