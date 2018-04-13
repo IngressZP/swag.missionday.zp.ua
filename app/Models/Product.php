@@ -11,7 +11,7 @@ class Product extends Model
 
     public $translatedAttributes = [
         'name',
-        'description'
+        'description',
     ];
 
     protected $fillable = [

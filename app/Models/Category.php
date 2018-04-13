@@ -10,11 +10,11 @@ class Category extends Model
     use Translatable;
 
     public $translatedAttributes = [
-        'title'
+        'title',
     ];
 
     protected $fillable = [
-        'slug'
+        'slug',
     ];
 
     public function products() {
