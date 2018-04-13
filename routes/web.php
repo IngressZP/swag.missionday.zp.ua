@@ -14,10 +14,9 @@
 Route::get('/', 'PageController@index')
     ->name('index');
 
-Route::get('/login', 'PageController@login')
-    ->name('login');
 
+Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'name' => 'admin'], function () {
-    Route::get('/', 'PageCotroller@adminIndex')
+    Route::get('/', 'PageController@adminIndex')
         ->name('index');
 });
