@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Response;
@@ -18,7 +20,8 @@ class PageController extends Controller
     }
 
     public function adminIndex() {
-        return view('admin.index');
+//        return view('admin.index');
+        return redirect()->route('admin.orders.index');
     }
 
     public function getUpload($filename) {
@@ -30,6 +33,32 @@ class PageController extends Controller
         } catch (FileNotFoundException $e) {
             return Response::make('Not found', 404);
         }
+    }
 
+    public function adminSettings() {
+        return view('admin.settings');
+    }
+
+    public function changePassword(Request $request) {
+        $oldpass = $request->get('oldpass');
+        $newpass = $request->get('newpass');
+        $chkpass = $request->get('chkpass');
+        $user = Auth::user();
+
+        if ($newpass == $chkpass) {
+            if(Hash::check($oldpass, $user->password)) {
+                $user->password = Hash::make($newpass);
+                $user->save();
+                $message = 'Пароль успешно изменен';
+            } else {
+                $message = 'Неправильный пароль';
+            }
+        } else {
+            $message = 'Пароли не совпадают';
+        }
+
+        $request->session()->flash('status', $message);
+
+        return redirect()->route('admin.settings');
     }
 }

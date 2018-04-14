@@ -4,6 +4,24 @@
     <h2 class="mt-2 mb-5 text-center">
         Категории
     </h2>
+
+    @if(session('status'))
+        <div class="alert alert-success alert-dismissible fade show">
+            {!! session('status') !!}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="alert alert-danger alert-dismissible fade show">
+            {!! session('error') !!}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     @foreach($cats as $cat)
         <div class="row my-1">
             <div class="col-md-9">
@@ -23,7 +41,7 @@
             </div>
         </div>
     @endforeach
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-5">
         <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
             <i class="fas fa-plus"></i> Добавить
         </a>

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h3 class="text-center mt-2 mb-5">
+    <h2 class="text-center mt-2 mb-5">
         Товар: {{ $product->name }}
-    </h3>
+    </h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="{{ route('admin.products.update', ['product' => $product->id]) }}"
@@ -23,7 +23,7 @@
                         Фотография
                     </label>
                     <img src="/img/{{ $product->main_image }}" alt="" style="max-width: 100%; max-height: 400px;" class="d-block">
-                    <input type="file" name="main_image" class="form-control" id="main_image" required>
+                    <input type="file" name="main_image" class="form-control" id="main_image">
                 </div>
                 <div class="form-group">
                     <label for="price">
@@ -37,11 +37,11 @@
                         Категория
                     </label>
                     <select name="category" id="category" class="form-control" required>
-                        <option value="" selected>
+                        <option value="">
                             -
                         </option>
                         @foreach($cats as $cat)
-                            <option value="{{ $cat->id }}">
+                            <option value="{{ $cat->id }}" @if($product->category_id == $cat->id) selected @endif>
                                 {{ $cat->title }}
                             </option>
                         @endforeach

@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index')
     ->name('index');
 Route::get('/img/uploads/{filename}', 'PageController@getUpload')
     ->name('img.uploads');
+Route::get('/lang/{lang}', 'LanguageController@changeLanguage')
+    ->name('lang');
 
 
 Auth::routes();
@@ -23,10 +25,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/', 'PageController@adminIndex')
         ->name('admin.index');
 
-
     # Order routes
     Route::get('/orders', 'OrderController@index')
         ->name('admin.orders.index');
+    Route::get('/order/view/{order}', 'OrderController@adminView')
+        ->name('admin.orders.view');
     Route::delete('/order/delete/{order}', 'OrderController@delete')
         ->name('admin.orders.delete');
 
@@ -64,4 +67,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     # User settings routes
     Route::get('/settings', 'PageController@adminSettings')
         ->name('admin.settings');
+    Route::post('/settings/password', 'PageController@changePassword')
+        ->name('admin.settings.password');
 });

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h3 class="text-center mt-2 mb-5">
+    <h2 class="text-center mt-2 mb-5">
         Новая категория
-    </h3>
+    </h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="{{ route('admin.categories.store') }}"

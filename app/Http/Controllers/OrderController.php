@@ -8,10 +8,16 @@ use App\Models\Order;
 class OrderController extends Controller
 {
     public function index() {
-        $orders = Order::all();
+        $orders = Order::orderBy('created_at', 'desc')->get();
 
         return view('admin.orders.list', [
             'orders' => $orders,
+        ]);
+    }
+
+    public function adminView(Order $order) {
+        return view('admin.orders.adminView', [
+            'order' => $order,
         ]);
     }
 
