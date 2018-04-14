@@ -64,4 +64,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     # User settings routes
     Route::get('/settings', 'PageController@adminSettings')
         ->name('admin.settings');
+    Route::post('/settings/password', 'PageController@changePassword')
+        ->name('admin.settings.password');
 });
