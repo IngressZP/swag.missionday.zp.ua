@@ -6,10 +6,13 @@
     </h2>
     @foreach($products as $product)
         <div class="row my-1">
-            <div class="col-md-9">
+            <div class="col-md-4">
                 {{ $product->name }}
             </div>
-            <div class="col-md-3 text-right">
+            <div class="col-md-4">
+                {{ $product->category->title }}
+            </div>
+            <div class="col-md-4 text-right">
                 <a href="{{ route('admin.products.edit', ['product' => $product->id]) }}" class="btn btn-primary">
                     <i class="fas fa-pencil-alt"></i>
                 </a>

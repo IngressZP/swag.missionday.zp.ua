@@ -6,7 +6,8 @@
     </h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="{{ route('admin.categories.update', ['category' => $category->id]) }}" method="post">
+            <form action="{{ route('admin.categories.update', ['category' => $category->id]) }}"
+                  method="post" class="mb-5">
                 {!! csrf_field() !!}
                 <input type="hidden" name="lang" value="{{ App::getLocale() }}">
 

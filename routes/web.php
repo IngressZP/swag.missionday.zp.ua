@@ -13,6 +13,8 @@
 
 Route::get('/', 'PageController@index')
     ->name('index');
+Route::get('/img/uploads/{filename}', 'PageController@getUpload')
+    ->name('img.uploads');
 
 
 Auth::routes();

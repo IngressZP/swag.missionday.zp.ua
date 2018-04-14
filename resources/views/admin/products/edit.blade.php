@@ -6,7 +6,8 @@
     </h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="{{ route('admin.products.update', ['product' => $product->id]) }}" method="post">
+            <form action="{{ route('admin.products.update', ['product' => $product->id]) }}"
+                  method="post" enctype="multipart/form-data" class="mb-5">
                 {!! csrf_field() !!}
                 <input type="hidden" name="lang" value="{{ App::getLocale() }}">
 
@@ -16,6 +17,13 @@
                     </label>
                     <input type="text" name="name" class="form-control" id="title" required
                            placeholder="Название товара" value="{{ $product->name or '' }}">
+                </div>
+                <div class="form-group">
+                    <label for="main_image">
+                        Фотография
+                    </label>
+                    <img src="/img/{{ $product->main_image }}" alt="" style="max-width: 100%; max-height: 400px;" class="d-block">
+                    <input type="file" name="main_image" class="form-control" id="main_image" required>
                 </div>
                 <div class="form-group">
                     <label for="price">

@@ -6,7 +6,8 @@
     </h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="{{ route('admin.products.store') }}" method="post">
+            <form action="{{ route('admin.products.store') }}"
+                  method="post" enctype="multipart/form-data" class="mb-5">
                 {!! csrf_field() !!}
                 <input type="hidden" name="lang" value="{{ App::getLocale() }}">
 
@@ -16,6 +17,12 @@
                     </label>
                     <input type="text" name="name" class="form-control" id="title" required
                            placeholder="Название товара">
+                </div>
+                <div class="form-group">
+                    <label for="main_image">
+                        Фотография
+                    </label>
+                    <input type="file" name="main_image" class="form-control" id="main_image" required>
                 </div>
                 <div class="form-group">
                     <label for="price">
