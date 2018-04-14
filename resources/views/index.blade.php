@@ -29,11 +29,34 @@
                     </div>
                 </div>
             </div>
-            <ul class="nav nav-pills justify-content-center">
+            <!-- <ul class="nav nav-pills justify-content-center">
                 <li class="nav-item"><a href="#" class="nav-link">Одежда, нашивки</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Чашки, бокалы</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Сувениры, наклейки</a></li>
-            </ul>
+            </ul> -->
         </div>
     </header>
+    <div class="container content">
+      <div class="row">
+        <a href="/category/clothes"class="col-lg d-flex align-items-center justify-content-center category">
+            <span>Одежда</span>
+        </a>
+        <div class="category_separator d-flex align-items-center"><div></div></div>
+        <div class="col-lg d-flex align-items-center justify-content-center category">
+            <span>Наклейки</span>
+        </div>
+        <div class="category_separator d-flex align-items-center"><div></div></div>
+        <div class="col-lg d-flex align-items-center justify-content-center category">
+            <span>Аксессуары</span>
+        </div>
+        <div class="category_separator d-flex align-items-center"><div></div></div>
+        <div class="col-lg d-flex align-items-center justify-content-center category">
+            <span>Хрупкое</span>
+        </div>
+        <div class="category_separator d-flex align-items-center"><div></div></div>
+        <div class="col-lg d-flex align-items-center justify-content-center category">
+            <span>Биокарты</span>
+        </div>
+      </div>
+    </div>
 @endsection
