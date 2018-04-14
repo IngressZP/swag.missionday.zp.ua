@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     # Order routes
     Route::get('/orders', 'OrderController@index')
         ->name('admin.orders.index');
+    Route::get('/order/view/{order}', 'OrderController@adminView')
+        ->name('admin.orders.view');
     Route::delete('/order/delete/{order}', 'OrderController@delete')
         ->name('admin.orders.delete');
 
