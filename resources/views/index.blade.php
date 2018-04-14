@@ -46,4 +46,19 @@
             @endforeach
         </div>
     </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-lg-3 product">
+                <div class="product_thumb">
+                    <div style="background: green;">
+
+                    </div>
+                </div>
+            <div class="product_title">Футболка Enlightened</div>
+            <div class="product_price">225 ₴</div>
+                <a class="button order" href="#">ЗАКАЗАТЬ</a>
+            </div>
+        </div>
+    </div>
 @endsection
