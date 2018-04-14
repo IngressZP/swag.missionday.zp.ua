@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp && gulp watch"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",

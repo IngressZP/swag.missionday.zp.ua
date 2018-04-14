@@ -11,6 +11,57 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'PageController@index')
+    ->name('index');
+Route::get('/img/uploads/{filename}', 'PageController@getUpload')
+    ->name('img.uploads');
+
+
+Auth::routes();
+
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('/', 'PageController@adminIndex')
+        ->name('admin.index');
+
+
+    # Order routes
+    Route::get('/orders', 'OrderController@index')
+        ->name('admin.orders.index');
+    Route::delete('/order/delete/{order}', 'OrderController@delete')
+        ->name('admin.orders.delete');
+
+
+    # Category routes
+    Route::get('/categories', 'CategoryController@index')
+        ->name('admin.categories.index');
+    Route::get('/categories/create', 'CategoryController@create')
+        ->name('admin.categories.create');
+    Route::post('/categories/create', 'CategoryController@store')
+        ->name('admin.categories.store');
+    Route::get('/category/edit/{category}', 'CategoryController@edit')
+        ->name('admin.categories.edit');
+    Route::post('/category/update/{category}', 'CategoryController@update')
+        ->name('admin.categories.update');
+    Route::delete('/category/delete/{category}', 'CategoryController@delete')
+        ->name('admin.categories.delete');
+
+
+    # Product routes
+    Route::get('/products', 'ProductController@index')
+        ->name('admin.products.index');
+    Route::get('/products/create', 'ProductController@create')
+        ->name('admin.products.create');
+    Route::post('/products/create', 'ProductController@store')
+        ->name('admin.products.store');
+    Route::get('/product/edit/{product}', 'ProductController@edit')
+        ->name('admin.products.edit');
+    Route::post('/product/update/{product}', 'ProductController@update')
+        ->name('admin.products.update');
+    Route::delete('/product/delete/{product}', 'ProductController@delete')
+        ->name('admin.products.delete');
+
+
+    # User settings routes
+    Route::get('/settings', 'PageController@adminSettings')
+        ->name('admin.settings');
 });

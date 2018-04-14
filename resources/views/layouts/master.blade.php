@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ App::getLocale()  }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -34,7 +34,6 @@
 
     <!-- css / fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    {{--<link rel="stylesheet" href="/fontawesome/css/fontawesome-all.min.css">--}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
     <!-- Main stylesheet -->

@@ -1,10 +1,12 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./resources/assets/js/main.js",
+    entry: {
+        "main": "./resources/assets/js/main.js",
+        "admin": "./resources/assets/js/admin.js"
+    },
     output: {
         path: path.resolve(__dirname, "public/js"),
-        filename: "main.min.js"
-    },
-    // mode: "development"
+        filename: "[name].min.js"
+    }
 };
