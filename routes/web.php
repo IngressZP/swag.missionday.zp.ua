@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index')
     ->name('index');
 Route::get('/img/uploads/{filename}', 'PageController@getUpload')
     ->name('img.uploads');
+Route::get('/lang/{lang}', 'LanguageController@changeLanguage')
+    ->name('lang');
 
 
 Auth::routes();
@@ -22,7 +24,6 @@ Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/', 'PageController@adminIndex')
         ->name('admin.index');
-
 
     # Order routes
     Route::get('/orders', 'OrderController@index')
