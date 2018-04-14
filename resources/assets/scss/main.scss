@@ -16,7 +16,7 @@ header {
       }
 
       &__title {
-        font-family: "GeomGraphic";
+        font-family: GeomGraphic, sans-serif;
         color: #fff;
         font-size: 80px;
         line-height: 1;
@@ -33,7 +33,7 @@ header {
 
 .category {
   color: #fff;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 30px;
   font-weight: bold;
   background: #ff9560;
@@ -42,6 +42,10 @@ header {
   &_separator {
     width: 1px;
     background: #ff9560;
+
+    &:last-of-type {
+      display: none;
+    }
 
     div {
       background: #fff;
@@ -55,50 +59,4 @@ header {
     color: #fff;
     text-decoration: none;
   }
-
-  span {
-    // margin: 10px 0;
-  }
 }
-
-// html,
-// body {
-//   font-family: 'Roboto', sans-serif;
-// }
-//
-// body {
-//   background-color: #eee;
-// }
-//
-// .container {
-//   background-color: #fff;
-// }
-//
-// .header {
-//   &__logo {
-//     max-width: 100%;
-//   }
-//
-//   &-contacts {
-//     word-spacing: 4px;
-//
-//     a {
-//       display: inline-block;
-//       width: 30px;
-//       height: 30px;
-//     }
-//   }
-//
-//   &__site-link {
-//     //text-decoration: underline;
-//     color: black;
-//
-//     a {
-//       text-decoration: underline;
-//
-//       &:hover {
-//         text-decoration: none;
-//       }
-//     }
-//   }
-// }

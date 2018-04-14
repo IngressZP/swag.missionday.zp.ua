@@ -8,11 +8,23 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Response;
 use Storage;
+use App\Models\Category;
+use App\Models\Product;
 
 class PageController extends Controller
 {
-    public function index() {
-        return view('index');
+    public function index(Request $request) {
+        if ($request->has('category')) {
+            $category = $request->get('category');
+            $products = Product::where('category_id', $category)->get();
+        } else {
+            $products = Product::all();
+        }
+
+        return view('index', [
+            'cats' => Category::all(),
+            'products' => $products,
+        ]);
     }
 
     public function login() {
