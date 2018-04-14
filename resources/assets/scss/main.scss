@@ -18,13 +18,47 @@ header {
       &__title {
         font-family: "GeomGraphic";
         color: #fff;
-        font-size: 80px; 
+        font-size: 80px;
         line-height: 1;
         span {
           color: rgb(255, 124, 58);
         }
       }
     }
+}
+
+.content {
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.category {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  background: #ff9560;
+  height: 75px;
+
+  &_separator {
+    width: 1px;
+    background: #ff9560;
+
+    div {
+      background: #fff;
+      height: 50px;
+      width: 1px;
+    }
+  }
+
+  &:hover {
+    background: #f05c12;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  span {
+    // margin: 10px 0;
+  }
 }
 
 // html,
