@@ -30,6 +30,10 @@ class CategoryController extends Controller
             ],
         ]);
 
+        $message = "Категория добавлена! ";
+        $message .= "<a href='" . route('admin.categories.edit', ['category' => $category->id]) . "'>Просмотр</a>";
+        $request->session()->flash('status', $message);
+
         return redirect()->route('admin.categories.index');
     }
 
@@ -48,11 +52,20 @@ class CategoryController extends Controller
             ],
         ]);
 
+        $message = "Категория обновлена! ";
+        $message .= "<a href='" . route('admin.categories.edit', ['category' => $category->id]) . "'>Просмотр</a>";
+        $request->session()->flash('status', $message);
+
         return redirect()->route('admin.categories.index');
     }
 
-    public function delete(Category $category) {
-        $category->delete();
+    public function delete(Category $category, Request $request) {
+        try {
+            $category->delete();
+            $request->session()->flash('status', "Категория удалена!");
+        } catch (\Exception $e) {
+            $request->session()->flash('error', 'Невозможно удалить категорию');
+        }
 
         return redirect()->route('admin.categories.index');
     }

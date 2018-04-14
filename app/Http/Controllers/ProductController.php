@@ -42,6 +42,10 @@ class ProductController extends Controller
             $product->save();
         }
 
+        $message = "Товар добавлен! ";
+        $message .= "<a href='" . route('admin.products.edit', ['product' => $product->id]) . "'>Просмотр</a>";
+        $request->session()->flash('status', $message);
+
         return redirect()->route('admin.products.index');
     }
 
@@ -70,11 +74,20 @@ class ProductController extends Controller
             $product->save();
         }
 
+        $message = "Товар обновлен! ";
+        $message .= "<a href='" . route('admin.products.edit', ['product' => $product->id]) . "'>Просмотр</a>";
+        $request->session()->flash('status', $message);
+
         return redirect()->route('admin.products.index');
     }
 
-    public function delete(Product $product) {
-        $product->delete();
+    public function delete(Product $product, Request $request) {
+        try {
+            $product->delete();
+            $request->session()->flash('status', 'Товар удален!');
+        } catch (\Exception $e) {
+            $request->session()->flash('error', 'Невозможно удалить товар');
+        }
 
         return redirect()->route('admin.products.index');
     }

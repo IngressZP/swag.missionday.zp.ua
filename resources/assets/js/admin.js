@@ -2,4 +2,6 @@ import $ from "jquery";
 import "bootstrap";
 
 
-console.log("admin");
+$('body').on('submit', 'form[action*="delete"]', function (e) {
+    return confirm('Вы уверены?');
+});

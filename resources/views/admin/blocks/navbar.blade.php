@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="/android-icon-192x192.png" class="mr-2" alt="" width="40" height="40">
-    <a href="#" class="navbar-brand">
+    <a href="/admin" class="navbar-brand">
         MD ZP Shop
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

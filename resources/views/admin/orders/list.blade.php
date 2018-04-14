@@ -4,7 +4,7 @@
     <h2 class="mt-2 mb-5 text-center">
         Заказы
     </h2>
-    <table class="table table-striped thead-light">
+    <table class="table table-striped thead-light mb-5">
         <thead>
             <th>#</th>
             <th>Ник в Telegram</th>

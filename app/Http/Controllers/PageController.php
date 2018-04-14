@@ -20,7 +20,8 @@ class PageController extends Controller
     }
 
     public function adminIndex() {
-        return view('admin.index');
+//        return view('admin.index');
+        return redirect()->route('admin.orders.index');
     }
 
     public function getUpload($filename) {
@@ -44,10 +45,19 @@ class PageController extends Controller
         $chkpass = $request->get('chkpass');
         $user = Auth::user();
 
-        if ($newpass == $chkpass && Hash::check($oldpass, $user->password)) {
-            $user->password = Hash::make($newpass);
-            $user->save();
+        if ($newpass == $chkpass) {
+            if(Hash::check($oldpass, $user->password)) {
+                $user->password = Hash::make($newpass);
+                $user->save();
+                $message = 'Пароль успешно изменен';
+            } else {
+                $message = 'Неправильный пароль';
+            }
+        } else {
+            $message = 'Пароли не совпадают';
         }
+
+        $request->session()->flash('status', $message);
 
         return redirect()->route('admin.settings');
     }
