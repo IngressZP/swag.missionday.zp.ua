@@ -32,6 +32,9 @@
             </li>
         </ul>
 
+        <span class="navbar-text mr-3">
+            <i class="fas fa-user"></i> {{ Auth::user()->name }}
+        </span>
         <ul class="navbar-nav mr-3">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
