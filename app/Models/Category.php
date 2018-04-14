@@ -17,6 +17,10 @@ class Category extends Model
         'slug',
     ];
 
+    protected $dates = [
+        'deleted_at',
+    ];
+
     public function products() {
         return $this->hasMany(Product::class);
     }

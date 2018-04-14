@@ -15,6 +15,10 @@ class Order extends Model
         'total',
     ];
 
+    protected $dates = [
+        'deleted_at',
+    ];
+
     public function products() {
         return $this->belongsToMany(Product::class);
     }
