@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row header">
                 <div class="col-md-3">
-                    <img class="header__logo" src="/img/md-logo-hex.png" alt="Mission Day Zaporizhzhia">
+                    <img class="header__logo"src="/img/md-logo-hex.png" alt="Mission Day Zaporizhzhia" class="header__logo">
                 </div>
                 <div class="col-md-6">
                     <div class="header__title">
@@ -29,36 +29,41 @@
                     </div>
                 </div>
             </div>
+            <!-- <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item"><a href="#" class="nav-link">Одежда, нашивки</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Чашки, бокалы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Сувениры, наклейки</a></li>
+            </ul> -->
         </div>
     </header>
-    <div class="container content">
-        <div class="row">
-            @foreach($cats as $cat)
-                <a href="/?category={{ $cat->id }}" class="col-lg d-flex align-items-center justify-content-center category">
-                    <span>{{ $cat->title }}</span>
-                </a>
-                <div class="category_separator d-flex align-items-center"><div></div></div>
-            @endforeach
-        </div>
-        <div class="products">
-            @foreach($products as $product)
-                <p>{{ $product->name }}</p>
-            @endforeach
-        </div>
+    <div class="container">
+      <div class="row">
+        @foreach ($cats as $cat)
+          <a href="/category/{{$cat->slug}}"class="col-lg d-flex align-items-center justify-content-center category">
+              <span>{{$cat->title}}</span>
+          </a>
+
+          @if (!$loop->last)
+            <div class="category_separator d-flex align-items-center"><div></div></div>
+          @endif
+
+        @endforeach
+      </div>
     </div>
 
     <div class="container content">
-        <div class="row">
-            <div class="col-lg-3 product">
-                <div class="product_thumb">
-                    <div style="background: green;">
+      <div class="row">
+        @foreach ($products as $product)
+        <div class="col-lg-3 product">
+          <div class="product_thumb">
+            <img src="/img/{{$product->main_image}}">
+          </div>
+          <div class="product_title">{{$product->name}}</div>
 
-                    </div>
-                </div>
-            <div class="product_title">Футболка Enlightened</div>
-            <div class="product_price">225 ₴</div>
-                <a class="button order" href="#">ЗАКАЗАТЬ</a>
-            </div>
+          <div class="product_price">225 ₴</div>
+          <a class="button order" href="#">ЗАКАЗАТЬ</a>
         </div>
+        @endforeach
+      </div>
     </div>
 @endsection
