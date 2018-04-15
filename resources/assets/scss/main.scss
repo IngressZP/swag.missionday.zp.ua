@@ -1,6 +1,8 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "fonts.scss";
 
+$orange: #e86e2d;
+
 header {
   background-image: url('/img/bg_header.jpg');
   background-size: cover;
@@ -164,3 +166,5 @@ header {
     }
   }
 }
+
+@import "footer";
