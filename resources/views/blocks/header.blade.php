@@ -14,7 +14,7 @@
           </a>
           <a href="https://t.me/missiondayzpchat" rel="noreferrer noopener" target="__blank"><i class="fab fa-telegram"></i></a>
           <a href="mailto:info@missionday.zp.ua" rel="noreferrer noopener" target="__blank"><i class="fas fa-at"></i></a>
-          <a href="https://www.instagram.com/missiondayzp/" rel="noreferrer noopener" target="__blank"><i class="fab fa-instagram"></i></a>
+          {{--<a href="https://www.instagram.com/missiondayzp/" rel="noreferrer noopener" target="__blank"><i class="fab fa-instagram"></i></a>--}}
           <a href="https://www.facebook.com/events/166075047320559/" rel="noreferrer noopener" target="__blank"><i class="fab fa-facebook-square"></i></a>
         </div>
         <div class="header-info__site-link">
