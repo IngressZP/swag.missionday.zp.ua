@@ -43,6 +43,14 @@ header {
       &-contacts {
         font-size: 2rem;
         word-spacing: 6px;
+
+        img {
+          display: inline-block;
+          margin-top: 5px;
+          vertical-align: top;
+          width: 36px;
+          height: 36px;
+        }
       }
 
       &__site-link {
