@@ -23,8 +23,12 @@ Route::get('/product/{product}', 'ProductController@show')
     ->name('product.view');
 
 # Cart routes
-Route::get('/cart/add/{product}', 'CartController@addProduct')
+Route::get('/checkout', 'CartController@show')
+    ->name('cart.show');
+Route::get('/cart/add/{product}/{quality?}', 'CartController@addProduct')
     ->name('cart.add');
+Route::post('/cart/makeorder', 'CartController@store')
+    ->name('cart.submit');
 
 Auth::routes();
 

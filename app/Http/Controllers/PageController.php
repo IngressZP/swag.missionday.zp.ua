@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Hash;
+use Cart;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Response;
@@ -26,6 +27,7 @@ class PageController extends Controller
             'category' => $category,
             'cats' => Category::all(),
             'products' => $products,
+            'cart' => Cart::content(),
         ]);
     }
 

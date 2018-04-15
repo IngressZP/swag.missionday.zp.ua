@@ -12,6 +12,7 @@ class Order extends Model
         'email',
         'phone',
         'city',
+        'comment',
         'total',
     ];
 

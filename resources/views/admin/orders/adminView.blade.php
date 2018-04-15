@@ -37,6 +37,10 @@
                         <td>{{ uah($order->total) }}</td>
                     </tr>
                     <tr>
+                        <th>Комментарий</th>
+                        <td>{{ $order->comment or '-' }}</td>
+                    </tr>
+                    <tr>
                         <th>Время</th>
                         <td>
                             {{ $order->created_at->format('d-m-Y H:i') }}

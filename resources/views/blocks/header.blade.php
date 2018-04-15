@@ -1,7 +1,9 @@
 <header>
   <div class="container">
     <div class="row header">
-      <img class="header__logo" src="/img/md-logo-hex.png" alt="Mission Day Zaporizhzhia">
+      <a href="{{ route('index') }}">
+        <img class="header__logo" src="/img/md-logo-hex.png" alt="Mission Day Zaporizhzhia">
+      </a>
       <div class="header__title col-md-6">
         <p>MD</p> Zaporizhzhia Swag Shop
       </div>
@@ -18,8 +20,11 @@
           </a>
           <i class="fas fa-external-link-alt"></i>
         </div>
-        <a href="#" class="header-info__cart btn btn-primary">
-          <i class="fas fa-shopping-cart"></i> {{ trans('main.cart.button') }} <span class="badge badge-light" hidden>0</span>
+        <a href="/checkout" class="header-info__cart btn btn-primary">
+          <i class="fas fa-shopping-cart"></i> {{ trans('main.cart.button') }}
+          @if(count($cart))
+            <span class="badge badge-light ml-2">{{ count($cart) }}</span>
+          @endif
         </a>
       </div>
     </div>
