@@ -47,15 +47,16 @@
 
     <meta name="theme-color" content="#ea5b0c"> <!-- will change the adressbar color on android chrome -->
 
-    @env('production') {{-- TODO: replace Google Analytics code --}}
-        {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110193834-1"></script>
+    @env('production')
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110193834-2"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-110193834-1');
-        </script>--}}
+            gtag('config', 'UA-110193834-2');
+        </script>
     @endenv
 </head>
 <body>
