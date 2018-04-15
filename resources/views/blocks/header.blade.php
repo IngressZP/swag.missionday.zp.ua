@@ -22,8 +22,8 @@
         </div>
         <a href="/checkout" class="header-info__cart btn btn-primary">
           <i class="fas fa-shopping-cart"></i> {{ trans('main.cart.button') }}
-          @if(count($cart))
-            <span class="badge badge-light ml-2">{{ count($cart) }}</span>
+          @if(Cart::count())
+            <span class="badge badge-light ml-2">{{ Cart::count() }}</span>
           @endif
         </a>
       </div>
