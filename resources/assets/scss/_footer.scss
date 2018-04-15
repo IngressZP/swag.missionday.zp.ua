@@ -1,0 +1,23 @@
+.footer {
+  background-color: #191919;
+  color: #797979;
+  font-size: .9rem;
+  padding: 10px 0;
+
+  p {
+    margin: 4px 0;
+  }
+
+  a {
+    color: #797979;
+
+    &:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    max-width: 96px;
+  }
+}

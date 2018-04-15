@@ -42,4 +42,15 @@ return [
             'comment' => 'Коментар до замовлення',
         ],
     ],
+    'footer' => [
+        'links' => [
+            'rsvp' => 'RSVP / Реєстрація',
+            'main' => 'Основний сайт',
+            'telegram' => 'Q&A чат в Telegram',
+            'mail' => 'info@missionday.zp.ua',
+            'instagram' => 'Instagram',
+            'facebook' => 'Facebook',
+            'github' => 'Github',
+        ],
+    ],
 ];

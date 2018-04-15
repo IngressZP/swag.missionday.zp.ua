@@ -41,5 +41,5 @@
 
             </div>
         </div>
-
+    @include('blocks.footer')
 @endsection

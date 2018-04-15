@@ -143,4 +143,6 @@
     </div>
     @endif
   </div>
+
+  @include('blocks.footer')
 @endsection
