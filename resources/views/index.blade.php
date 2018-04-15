@@ -36,7 +36,7 @@
             </ul> -->
         </div>
     </header>
-    <div class="container">
+    <div class="container category_navigation">
       <div class="row">
         @foreach ($cats as $cat)
           <a href="/category/{{$cat->slug}}"class="col-lg d-flex align-items-center justify-content-center category">
