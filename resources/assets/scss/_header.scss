@@ -1,0 +1,99 @@
+header {
+  position: relative;
+  background-image: url('/img/bg_header.jpg');
+  background-size: cover;
+  background-position-y: center;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60,59,57,.8);
+    transition: all 1s ease;
+    z-index: 0;
+  }
+
+  &:hover:after {
+    background: rgba(53,34,24,.4);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .header {
+    padding: 60px 0;
+    flex-flow: row;
+
+    &__logo {
+      height: 180px;
+      width: auto;
+      margin: 0 40px 0 20px;
+    }
+
+    &__title {
+      font-family: GeomGraphic, sans-serif;
+      color: #fff;
+      font-size: 3.2rem;
+      line-height: 1;
+
+      p {
+        color: rgb(255, 124, 58);
+        margin: 0;
+      }
+    }
+
+    &-info {
+      position: relative;
+      flex-grow: 1;
+      text-align: right;
+      padding-right: 20px;
+
+      &-contacts {
+        font-size: 2rem;
+        word-spacing: 6px;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+            color: #ccc;
+          }
+        }
+
+        img {
+          display: inline-block;
+          margin-top: 5px;
+          vertical-align: top;
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      &__site-link {
+        font-size: 1.2rem;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &__cart {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+      }
+    }
+  }
+}
