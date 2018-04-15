@@ -19,11 +19,10 @@
         </div>
         <div class="header-info__site-link">
           <a href="https://missionday.zp.ua" target="__blank">
-            {{ trans('main.header.main-site') }}
+            {{ trans('main.header.main-site') }} <i class="fas fa-external-link-alt"></i>
           </a>
-          <i class="fas fa-external-link-alt"></i>
         </div>
-        <a href="/checkout" class="header-info__cart btn btn-primary">
+        <a href="/checkout" class="header-info__cart btn btn-primary btn-lg">
           <i class="fas fa-shopping-cart"></i> {{ trans('main.cart.button') }}
           @if(Cart::count())
             <span class="badge badge-light ml-2">{{ Cart::count() }}</span>
