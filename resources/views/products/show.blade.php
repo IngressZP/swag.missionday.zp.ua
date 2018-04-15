@@ -17,7 +17,7 @@
                 <div class="col-lg">
                     <div class="class row">
                         <div class="col-lg-12">
-                            <div class="product__price">
+                            <div class="product__price_main">
                                 {{ uah($product->price) }}
                             </div>
                         </div>
@@ -27,6 +27,11 @@
                             </div>
                             <div class="product__size product__size_active">
                                 <span>M</span>
+                            </div>
+                        </div>
+                        <div class="d-flex col-lg-12">
+                            <div class="product__description">
+                                {{ $product->description }}
                             </div>
                         </div>
                     </div>
