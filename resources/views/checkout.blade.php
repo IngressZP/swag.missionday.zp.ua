@@ -55,13 +55,16 @@
     </div>
     @if(count($cart) && !$form)
       <div class="row">
-        <div class="col-md-6 offset-md-2" style="padding-top: .375rem; padding-bottom: .375rem; font-size: 1.2rem;">
+        <div class="col-md-4 offset-md-2" style="padding-top: .375rem; padding-bottom: .375rem; font-size: 1.2rem;">
           <strong>
             {{ trans('main.cart.total') }}:
           </strong>
           {{ uah(Cart::subtotal()) }}
         </div>
-        <div class="col-md-2 justify-content-end text-right">
+        <div class="col-md-4 justify-content-end text-right">
+          <a href="{{ route('cart.clear') }}" class="btn btn-secondary">
+            {{ trans('main.cart.clear') }}
+          </a>
           <a href="{{ route('cart.show', ['form' => 1]) }}" class="btn btn-primary">
             {{ trans('main.cart.order') }}
           </a>

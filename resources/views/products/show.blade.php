@@ -40,23 +40,34 @@
               {{ uah($product->price) }}
             </div>
           </div>
-          <div class="d-flex col-lg-12">
-            <div class="product__size">
-              <span>S</span>
-            </div>
-            <div class="product__size product__size_active">
-              <span>M</span>
-            </div>
-          </div>
+          {{--<div class="d-flex col-lg-12">--}}
+            {{--<div class="product__size">--}}
+              {{--<span>S</span>--}}
+            {{--</div>--}}
+            {{--<div class="product__size product__size_active">--}}
+              {{--<span>M</span>--}}
+            {{--</div>--}}
+          {{--</div>--}}
           <div class="d-flex col-lg-12">
             <div class="product__description">
                 {{ $product->description }}
             </div>
           </div>
           <div class="d-flex col-lg-12">
-            <a href="javascript:void(0)" class="btn product__buy">
-                КУПИТЬ
-            </a>
+            <form action="{{ route('cart.add') }}" method="post" class="product-form">
+              {!! csrf_field() !!}
+              <input type="hidden" name="product" value="{{ $product->id }}">
+
+              <div class="product-quantity">
+                <button class="product-quantity__control product-quantity__control_minus">-</button>
+                <input type="number" class="form-control product-quantity__input" value="1" min="1" name="quantity">
+                <button class="product-quantity__control product-quantity__control_plus">+</button>
+              </div>
+
+              <button class="btn btn-primary btn-lg product__buy" type="submit">
+                  {{ trans('main.product.buy') }}
+              </button>
+            </form>
           </div>
         </div>
       </div>

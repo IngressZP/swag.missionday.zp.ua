@@ -25,7 +25,9 @@ Route::get('/product/{product}', 'ProductController@show')
 # Cart routes
 Route::get('/checkout', 'CartController@show')
     ->name('cart.show');
-Route::get('/cart/add/{product}/{quality?}', 'CartController@addProduct')
+Route::get('/cart/clear', 'CartController@clear')
+    ->name('cart.clear');
+Route::post('/cart/add', 'CartController@addProduct')
     ->name('cart.add');
 Route::post('/cart/makeorder', 'CartController@store')
     ->name('cart.submit');

@@ -39,9 +39,13 @@
           <div class="card-body">
             <a class="product__title" href="{{ route('product.view', ['product' => $product->id]) }}">{{$product->name}}</a>
             <div class="product__price">{{ uah($product->price) }}</div>
-            <a class="button order btn btn-primary product__order" href="{{ route('cart.add', ['product' => $product->id]) }}">
-              <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
-            </a>
+            <form action="{{ route('cart.add') }}" method="post">
+              {!! csrf_field() !!}
+              <input type="hidden" name="product" value="{{ $product->id }}">
+              <button class="button order btn btn-primary product__order" type="submit">
+                <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
+              </button>
+            </form>
           </div>
         </div>
       @endforeach

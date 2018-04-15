@@ -24,8 +24,19 @@ class CartController extends Controller
         ]);
     }
 
-    public function addProduct(Product $product, $quality = 1, Request $request) {
-        Cart::add($product, $quality);
+    public function clear() {
+        Cart::destroy();
+        return redirect()->back();
+    }
+
+    public function addProduct(Request $request) {
+        $product = Product::find($request->get('product'));
+        $quantity = $request->get('quantity', 1);
+
+        if ($product) {
+            Cart::add($product, $quantity);
+        }
+
         return redirect()->back();
     }
 

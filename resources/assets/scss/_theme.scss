@@ -7,7 +7,7 @@ $orange: #e86e2d;
 
   &:hover,
   &:active {
-    background-color: darken($orange, 10);
-    border-color: darken($orange, 10);
+    background-color: darken($orange, 10) !important;
+    border-color: darken($orange, 10) !important;
   }
 }
