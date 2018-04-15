@@ -2,29 +2,60 @@
 @import "fonts.scss";
 
 header {
-    background-image: url('/img/bg_header.jpg');
-    padding: 45px 0;
+  background-image: url('/img/bg_header.jpg');
+  background-size: cover;
+  background-position-y: center;
 
-    .container {
-      background-color: rgba(255, 255, 255, 0.3);
+  .container {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .header {
+    padding: 20px 0;
+    flex-flow: row;
+
+    &__logo {
+      height: 180px;
+      width: auto;
+      margin: 0 40px 0 20px;
     }
 
-    .header {
-      &__logo {
-        height: 262px;
-        width: auto;
-      }
+    &__title {
+      font-family: GeomGraphic, sans-serif;
+      color: #fff;
+      font-size: 3.2rem;
+      line-height: 1;
 
-      &__title {
-        font-family: GeomGraphic, sans-serif;
-        color: #fff;
-        font-size: 80px;
-        line-height: 1;
-        span {
-          color: rgb(255, 124, 58);
-        }
+      p {
+        color: rgb(255, 124, 58);
+        margin: 0;
       }
     }
+
+    &-info {
+      position: relative;
+      flex-grow: 1;
+      text-align: right;
+      padding-right: 20px;
+
+      &-contacts {
+        font-size: 2rem;
+        word-spacing: 6px;
+      }
+
+      &__site-link {
+        font-size: 1.2rem;
+      }
+
+      &__cart {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .content {
@@ -33,19 +64,26 @@ header {
   padding-bottom: 45px;
 }
 
+.categories {
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
 .category {
   color: #fff;
   font-family: Roboto, sans-serif;
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: bold;
   background: #ff9560;
   height: 75px;
 
-  &_navigation {
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  &:hover,
+  &.active {
+    background: #f05c12;
+    color: #fff;
+    text-decoration: none;
   }
 
-  &_separator {
+  &-separator {
     width: 1px;
     background: #ff9560;
 
@@ -59,32 +97,48 @@ header {
       width: 1px;
     }
   }
+}
 
-  &:hover {
-    background: #f05c12;
-    color: #fff;
-    text-decoration: none;
-  }
+.products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .product {
-  margin: 0 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
-  border-radius: 30px;
+  padding: 0;
+  margin: 10px 15px;
+  width: 280px;
+  //box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
 
-  &_thumb {
-    margin: 10px;
+  &:hover {
+    //box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  &__thumb {
     height: 300px;
-    display: flex;
+    position: relative;
+    overflow: hidden;
 
     img {
       width: 100%;
+      min-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
-  &:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  &-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .btn {
+      font-size: .84rem;
+      text-transform: uppercase;
+      margin: 5px 0 0;
+    }
   }
 }

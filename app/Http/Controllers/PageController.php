@@ -18,10 +18,12 @@ class PageController extends Controller
             $category = $request->get('category');
             $products = Product::where('category_id', $category)->get();
         } else {
+            $category = 0;
             $products = Product::all();
         }
 
         return view('index', [
+            'category' => $category,
             'cats' => Category::all(),
             'products' => $products,
         ]);

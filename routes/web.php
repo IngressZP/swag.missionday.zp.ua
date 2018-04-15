@@ -18,6 +18,13 @@ Route::get('/img/uploads/{filename}', 'PageController@getUpload')
 Route::get('/lang/{lang}', 'LanguageController@changeLanguage')
     ->name('lang');
 
+# Product routes
+Route::get('/product/{product}', 'ProductController@show')
+    ->name('product.view');
+
+# Cart routes
+Route::get('/cart/add/{product}', 'CartController@addProduct')
+    ->name('cart.add');
 
 Auth::routes();
 
