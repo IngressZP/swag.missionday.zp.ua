@@ -5,7 +5,8 @@ $orange: #e86e2d;
   border-color: $orange;
   transition: all .5s ease;
 
-  &:hover {
+  &:hover,
+  &:active {
     background-color: darken($orange, 10);
     border-color: darken($orange, 10);
   }

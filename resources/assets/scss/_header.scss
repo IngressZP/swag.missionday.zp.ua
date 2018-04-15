@@ -30,8 +30,7 @@ header {
     flex-flow: row;
 
     &__logo {
-      height: 180px;
-      width: auto;
+      width: 180px;
       margin: 0 40px 0 20px;
     }
 
@@ -44,6 +43,18 @@ header {
       p {
         color: rgb(255, 124, 58);
         margin: 0;
+      }
+    }
+
+    &-language {
+      position: absolute;
+      display: block;
+      z-index: 1;
+      right: 10px;
+      top: 5px;
+
+      .btn {
+        text-transform: uppercase;
       }
     }
 
@@ -90,9 +101,17 @@ header {
       }
 
       &__cart {
+        display: block;
         position: absolute;
         bottom: 0;
         right: 20px;
+
+        img {
+          width: 36px;
+          height: 36px;
+          display: inline-block;
+          margin-right: 4px;
+        }
       }
     }
   }

@@ -37,16 +37,11 @@
             <img src="/img/{{$product->main_image}}" class="">
           </div>
           <div class="card-body">
-            <div class="product__title">{{$product->name}}</div>
+            <a class="product__title" href="{{ route('product.view', ['product' => $product->id]) }}">{{$product->name}}</a>
             <div class="product__price">{{ uah($product->price) }}</div>
-            <div class="product-links">
-              <a class="button details btn btn-info" href="{{ route('product.view', ['product' => $product->id]) }}">
-                <i class="fas fa-info-circle"></i> {{ trans('main.product.details') }}
-              </a>
-              <a class="button order btn btn-primary" href="{{ route('cart.add', ['product' => $product->id]) }}">
-                <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
-              </a>
-            </div>
+            <a class="button order btn btn-primary product__order" href="{{ route('cart.add', ['product' => $product->id]) }}">
+              <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
+            </a>
           </div>
         </div>
       @endforeach
