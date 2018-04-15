@@ -2,7 +2,7 @@
 
 @section('content')
     @include('blocks.header')
-        <div class="container">
+        <div class="container content">
             <div class="row">
                 <div class="col-lg">
                   <div class="product__name">
@@ -12,7 +12,9 @@
             </div>
             <div class="row">
                 <div class="col-lg">
-
+                    <div class="product__image">
+                        <img src="/img/{{ $product->main_image }}" alt="">
+                    </div>
                 </div>
                 <div class="col-lg">
                     <div class="class row">

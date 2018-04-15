@@ -115,11 +115,15 @@ header {
     //box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 
+  &__image {
+    border: 1px #ff9560 solid;
+  }
+
   &__price_main {
     font-size: 2.3rem;
     font-weight: bold;
     font-family: GeomGraphic, sans-serif;
-    margin: 20px 0;
+    margin-bottom: 20px;
   }
 
   &__description {
@@ -149,8 +153,11 @@ header {
   }
 
   &__name {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 45px;
     color: #d24913;
+
   }
 
   &__thumb {
