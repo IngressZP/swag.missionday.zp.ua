@@ -7,6 +7,7 @@ const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 const webpackConfig = require('./webpack.config');
 const webpackStream = require('webpack-stream');
+const notify = require('gulp-notify');
 
 gulp.task('build:css', function () {
     gulp.src('./resources/assets/scss/*.scss')
@@ -15,7 +16,8 @@ gulp.task('build:css', function () {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./public/css'))
+        .pipe(notify({message: 'Built CSS', onLast: true}))
 });
 
 gulp.task('build:fonts', function () {
@@ -30,6 +32,7 @@ gulp.task('build:js', function () {
             this.emit('end'); // Recover from errors
         })
         .pipe(gulp.dest('./public/js'))
+        .pipe(notify({message: 'Built JS', onLast: true}))
 });
 
 gulp.task('build:img', function () {
