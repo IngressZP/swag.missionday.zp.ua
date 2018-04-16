@@ -11,5 +11,13 @@ $factory->define(App\Models\Product::class, function (Faker $faker) {
             'name' => implode(" ", $faker->words(3)),
             'description' => $faker->paragraph,
         ],
+        'ru' => [
+            'name' => implode(" ", $faker->words(3)),
+            'description' => $faker->paragraph,
+        ],
+        'en' => [
+            'name' => implode(" ", $faker->words(3)),
+            'description' => $faker->paragraph,
+        ],
     ];
 });
