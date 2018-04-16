@@ -40,6 +40,19 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function updateProduct(Request $request) {
+        $rowId = $request->get('rowId');
+        $quantity = $request->get('quantity');
+
+        Cart::update($rowId, $quantity);
+        return redirect()->back();
+    }
+
+    public function removeProduct(Request $request) {
+        Cart::remove($request->get('rowId'));
+        return redirect()->back();
+    }
+
     public function store(Request $request) {
         $order = Order::create([
             'telegram_nick' => $request->get('telegram_nick'),

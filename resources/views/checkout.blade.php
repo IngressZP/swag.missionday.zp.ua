@@ -9,9 +9,9 @@
     </h2>
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <table class="table table-striped table-bordered">
+        <table class="checkout-table">
           <thead>
-          <th>{{ trans('main.cart.table.image') }}</th>
+          <th>{{ trans('main.cart.table.product') }}</th>
           <th>{{ trans('main.cart.table.name') }}</th>
           <th>{{ trans('main.cart.table.price') }}</th>
           <th>{{ trans('main.cart.table.quantity') }}</th>
@@ -32,13 +32,32 @@
                   {{ uah($item->price) }}
                 </td>
                 <td>
-                  {{--<input type="number" name="qty" class="form-control" value="{{ $item->qty }}" style="max-width: 100px;">--}}
+                  <form action="{{ route('cart.update') }}" method="post">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="rowId" value="{{ $item->rowId }}">
+                    <input type="hidden" name="quantity" value="{{ max($item->qty - 1, 1) }}">
+                    <button class="checkout-table-item-quantity checkout-table-item-quantity_minus" type="submit">-</button>
+                  </form>
                   {{ $item->qty }}
+                  <form action="{{ route('cart.update') }}" method="post">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="rowId" value="{{ $item->rowId }}">
+                    <input type="hidden" name="quantity" value="{{ $item->qty + 1 }}">
+                    <button class="checkout-table-item-quantity checkout-table-item-quantity_plus" type="submit">+</button>
+                  </form>
                 </td>
                 <td>
                   {{ uah($item->subtotal) }}
                 </td>
-                <td></td>
+                <td>
+                  @if(!$form)
+                    <form action="{{ route('cart.remove') }}" method="post">
+                      {!! csrf_field() !!}
+                      <input type="hidden" name="rowId" value="{{ $item->rowId }}">
+                      <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                    </form>
+                  @endif
+                </td>
               </tr>
             @endforeach
           @else
@@ -55,19 +74,21 @@
     </div>
     @if(count($cart) && !$form)
       <div class="row">
-        <div class="col-md-4 offset-md-2" style="padding-top: .375rem; padding-bottom: .375rem; font-size: 1.2rem;">
-          <strong>
-            {{ trans('main.cart.total') }}:
-          </strong>
-          {{ uah(Cart::subtotal()) }}
-        </div>
-        <div class="col-md-4 justify-content-end text-right">
-          <a href="{{ route('cart.clear') }}" class="btn btn-secondary">
-            {{ trans('main.cart.clear') }}
-          </a>
-          <a href="{{ route('cart.show', ['form' => 1]) }}" class="btn btn-primary">
-            {{ trans('main.cart.order') }}
-          </a>
+        <div class="col-md-8 text-right offset-md-2">
+          <div style="font-size: 1.5rem;" class="mb-3">
+            <strong>
+              {{ trans('main.cart.total') }}:
+            </strong>
+            {{ uah(Cart::subtotal()) }}
+          </div>
+          <div>
+            <a href="{{ route('cart.clear') }}" class="btn btn-secondary">
+              {{ trans('main.cart.clear') }}
+            </a>
+            <a href="{{ route('cart.show', ['form' => 1]) }}" class="btn btn-primary btn-lg ml-2">
+              {{ trans('main.cart.order') }}
+            </a>
+          </div>
         </div>
       </div>
     @endif

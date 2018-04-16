@@ -29,6 +29,10 @@ Route::get('/cart/clear', 'CartController@clear')
     ->name('cart.clear');
 Route::post('/cart/add', 'CartController@addProduct')
     ->name('cart.add');
+Route::post('/cart/add', 'CartController@updateProduct')
+    ->name('cart.update');
+Route::post('/cart/remove', 'CartController@removeProduct')
+    ->name('cart.remove');
 Route::post('/cart/makeorder', 'CartController@store')
     ->name('cart.submit');
 

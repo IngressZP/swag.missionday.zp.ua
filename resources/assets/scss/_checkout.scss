@@ -1,0 +1,79 @@
+.checkout-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+
+  th {
+    text-align: center;
+    color: $orange;
+    font-weight: bold;
+  }
+
+  tbody tr {
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
+
+  td {
+    position: relative;
+    text-align: center;
+    
+    &:nth-child(2) {
+      text-align: left;
+      color: $orange;
+      font-weight: bold;
+      //vertical-align: top;
+      //padding-top: 10px;
+    }
+
+    &:nth-child(3),
+    &:nth-child(5) {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    &:after {
+      content: '';
+      height: 50%;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 25%;
+      width: 1px;
+      background-color: $orange;
+    }
+
+    &:first-child:after,
+    &:nth-last-child(2):after,
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 5px auto;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.4);
+  }
+
+  form {
+    display: inline-block;
+  }
+
+  &-item-quantity {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: 2px solid $orange;
+    font-weight: bold;
+    color: $orange;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    display: inline-block;
+    margin: 0 2px;
+  }
+}
