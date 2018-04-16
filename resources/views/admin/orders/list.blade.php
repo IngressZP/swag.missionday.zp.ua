@@ -15,7 +15,7 @@
             <th>Сумма</th>
             <th>Время</th>
             <th>Детали</th>
-            <th>Действия</th>
+            {{--<th>Действия</th>--}}
         </thead>
         <tbody>
             @foreach($orders as $order)
@@ -33,15 +33,15 @@
                     <td>
                         <a href="{{ route('admin.orders.view', ['order' => $order->id]) }}">Просмотр</a>
                     </td>
-                    <td>
-                        <form action="{{ route('admin.orders.delete', ['order' => $order->id]) }}" method="post" class="d-inline-block">
-                            {!! csrf_field() !!}
-                            <input type="hidden" name="_method" value="delete">
-                            <button class="btn btn-warning">
-                                <i class="fas fa-archive"></i>
-                            </button>
-                        </form>
-                    </td>
+                    {{--<td>--}}
+                        {{--<form action="{{ route('admin.orders.delete', ['order' => $order->id]) }}" method="post" class="d-inline-block">--}}
+                            {{--{!! csrf_field() !!}--}}
+                            {{--<input type="hidden" name="_method" value="delete">--}}
+                            {{--<button class="btn btn-warning">--}}
+                                {{--<i class="fas fa-archive"></i>--}}
+                            {{--</button>--}}
+                        {{--</form>--}}
+                    {{--</td>--}}
                 </tr>
             @endforeach
         </tbody>
