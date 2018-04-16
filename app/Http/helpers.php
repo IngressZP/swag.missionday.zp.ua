@@ -26,3 +26,7 @@ function productImage($productId) {
         return '/img/noimage.png';
     }
 }
+
+function description($text = '') {
+    return str_replace("\n", "<br>", $text);
+}

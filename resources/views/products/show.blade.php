@@ -48,7 +48,7 @@
           {{--</div>--}}
           <div class="d-flex col-lg-12">
             <div class="product__description">
-                {{ $product->description }}
+                {!! description($product->description) !!}
             </div>
           </div>
           <div class="d-flex col-lg-12">
