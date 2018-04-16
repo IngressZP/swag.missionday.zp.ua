@@ -26,14 +26,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg">
+      <div class="col-md-6">
         <div class="product__image">
-          <div>
-            <img src="/img/{{ $product->main_image }}" alt="">
-          </div>
+          <img src="/img/{{ $product->main_image }}" alt="">
         </div>
       </div>
-      <div class="col-lg">
+      <div class="col-md-6">
         <div class="class row">
           <div class="col-lg-12">
             <div class="product__price_main">

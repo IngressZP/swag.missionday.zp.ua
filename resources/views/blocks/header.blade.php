@@ -20,7 +20,7 @@
 
         <div class="header-info__site-link">
           <a href="https://missionday.zp.ua" target="__blank">
-            {{ trans('main.header.main-site') }} <i class="fas fa-external-link-alt"></i>
+            {{ trans('main.header.main-site') }} <i class="fas fa-external-link-alt fa-xs"></i>
           </a>
         </div>
 
