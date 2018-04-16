@@ -63,6 +63,8 @@
     @yield('content')
 
     @section('scripts')
+        <script src="https://cdn.ravenjs.com/3.24.1/raven.min.js" crossorigin="anonymous"></script>
+        <script>Raven.config('https://e668606066534872b6a8f0e9ef5220d7@sentry.io/1188827').install()</script>
         <script src="/js/main.min.js"></script>
     @show
 </body>
