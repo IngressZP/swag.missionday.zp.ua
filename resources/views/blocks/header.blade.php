@@ -34,17 +34,17 @@
         </a>
       </div>
     </div>
-  </div>
 
-  <div class="dropdown header-language">
-    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-      <img src="/img/flags/flag-{{ App::getLocale() }}.png" alt="" height="16"> {{ App::getLocale() }}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="/lang/uk"><img src="/img/flags/flag-uk.png" alt="" height="16"> UK</a>
-      <a class="dropdown-item" href="/lang/ru"><img src="/img/flags/flag-ru.png" alt="" height="16"> RU</a>
-      <a class="dropdown-item" href="/lang/en"><img src="/img/flags/flag-en.png" alt="" height="16"> EN</a>
+    <div class="dropdown header-language">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        <img src="/img/flags/flag-{{ App::getLocale() }}.png" alt="" height="16"> {{ App::getLocale() }}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/lang/uk"><img src="/img/flags/flag-uk.png" alt="" height="16"> UK</a>
+        <a class="dropdown-item" href="/lang/ru"><img src="/img/flags/flag-ru.png" alt="" height="16"> RU</a>
+        <a class="dropdown-item" href="/lang/en"><img src="/img/flags/flag-en.png" alt="" height="16"> EN</a>
+      </div>
     </div>
   </div>
 </header>

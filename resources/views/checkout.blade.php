@@ -62,7 +62,7 @@
             @endforeach
           @else
             <tr>
-              <td colspan="6" class="text-center">
+              <td colspan="6" class="text-center py-4">
                 {{ trans('main.cart.empty') }} <br>
                 <a href="{{ route('index') }}" class="btn btn-primary mt-2">{{ trans('main.cart.to-index') }}</a>
               </td>
