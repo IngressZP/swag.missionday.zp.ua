@@ -2,6 +2,7 @@
 
 @section('content')
   @include('blocks.header')
+  @include('blocks.status')
 
   <div class="container content">
     <h2 class="text-center mb-3">

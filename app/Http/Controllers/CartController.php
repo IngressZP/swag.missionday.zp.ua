@@ -75,6 +75,7 @@ class CartController extends Controller
 
         Cart::destroy();
 
-        return redirect()->route('index'); # TODO: successful order message
+        $request->session()->flash('status', trans('main.cart.order-success'));
+        return redirect()->route('index');
     }
 }

@@ -2,6 +2,8 @@
 
 @section('content')
   @include('blocks.header')
+  @include('blocks.status')
+
   <div class="container categories">
     <div class="row">
       @foreach ($cats as $cat)
