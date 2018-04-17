@@ -12,8 +12,7 @@ return [
         'buy' => 'Buy',
     ],
     'cart' => [
-        'order-success' => "<h3>Thank you! Your order is being processed.</h3>\
-          <br> We will contact you soon to clarify order and payment details.",
+        'order-success' => "<h3>Thank you! Your order is being processed.</h3> <br> We will contact you soon to clarify order and payment details.",
         'order-header' => 'Make order',
         'order' => 'Order',
         'clear' => 'Clear',
