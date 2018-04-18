@@ -23,6 +23,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- CSRF token -->
+    <meta name="token" content="{{ csrf_token() }}">
 </head>
 <body>
     <div class="container">

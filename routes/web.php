@@ -47,6 +47,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         ->name('admin.orders.index');
     Route::get('/order/view/{order}', 'OrderController@adminView')
         ->name('admin.orders.view');
+    Route::post('/order/{order}/status', 'OrderController@updateStatus')
+        ->name('order.status.update');
     Route::delete('/order/delete/{order}', 'OrderController@delete')
         ->name('admin.orders.delete');
 
