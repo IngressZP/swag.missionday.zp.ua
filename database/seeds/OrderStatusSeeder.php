@@ -31,6 +31,9 @@ class OrderStatusSeeder extends Seeder
             [
                 'title' => 'оплачен',
             ],
+            [
+                'title' => 'отправлено',
+            ],
         ]);
     }
 }
