@@ -35,6 +35,11 @@ return [
             'phone' => 'Phone',
             'city' => 'City',
             'comment' => 'Comment',
+            'delivery' => [
+                'general' => 'Order shipment',
+                'yes' => 'Nova Poshta (only in Ukraine)',
+                'no' => 'Onsite',
+            ],
         ],
         'placeholders' => [
             'telegram_nick' => 'Telegram nickname',

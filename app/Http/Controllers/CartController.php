@@ -62,6 +62,7 @@ class CartController extends Controller
             'city' => $request->get('city'),
             'comment' => $request->get('comment'),
             'total' => Cart::subtotal(),
+            'delivery' => $request->get('delivery', true),
         ]);
 
         foreach (Cart::content() as $item) {

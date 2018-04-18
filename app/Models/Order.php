@@ -16,6 +16,7 @@ class Order extends Model
         'city',
         'comment',
         'total',
+        'delivery',
     ];
 
     protected $dates = [

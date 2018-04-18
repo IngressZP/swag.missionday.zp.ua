@@ -109,25 +109,31 @@
             </div>
 
             <div class="form-group row">
-              <label for="telegram_nick" class="col-md-4 col-form-label">{{ trans('main.cart.labels.telegram_nick') }}</label>
+              <label for="telegram_nick" class="col-md-4 col-form-label">
+                {{ trans('main.cart.labels.telegram_nick') }} <span class="text-danger">*</span>
+              </label>
               <div class="col-md-8">
-                <input type="text" class="form-control" name="telegram_nick" id="telegram_nick"
-                       placeholder="{{ trans('main.cart.placeholders.telegram_nick') }}" required value="{{ old('telegram_nick') }}">
+                <input type="text" class="form-control" name="telegram_nick" id="telegram_nick" required
+                       placeholder="{{ trans('main.cart.placeholders.telegram_nick') }}" value="{{ old('telegram_nick') }}">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="ingress_nick" class="col-md-4 col-form-label">{{ trans('main.cart.labels.ingress_nick') }}</label>
+              <label for="ingress_nick" class="col-md-4 col-form-label">
+                {{ trans('main.cart.labels.ingress_nick') }} <span class="text-danger">*</span>
+              </label>
               <div class="col-md-8">
-                <input type="text" class="form-control" name="ingress_nick" id="ingress_nick"
-                       placeholder="{{ trans('main.cart.placeholders.ingress_nick') }}" required>
+                <input type="text" class="form-control" name="ingress_nick" id="ingress_nick" required
+                       placeholder="{{ trans('main.cart.placeholders.ingress_nick') }}">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="email" class="col-md-4 col-form-label">{{ trans('main.cart.labels.email') }}</label>
+              <label for="email" class="col-md-4 col-form-label">
+                {{ trans('main.cart.labels.email') }} <span class="text-danger">*</span>
+              </label>
               <div class="col-md-8">
-                <input type="email" class="form-control" name="email" id="email"
+                <input type="email" class="form-control" name="email" id="email" required
                        placeholder="{{ trans('main.cart.placeholders.email') }}">
               </div>
             </div>
@@ -141,10 +147,30 @@
             </div>
 
             <div class="form-group row">
-              <label for="city" class="col-md-4 col-form-label">{{ trans('main.cart.labels.city') }}</label>
+              <label for="city" class="col-md-4 col-form-label">
+                {{ trans('main.cart.labels.city') }} <span class="text-danger">*</span>
+              </label>
               <div class="col-md-8">
-                <input type="text" class="form-control" name="city" id="city"
+                <input type="text" class="form-control" name="city" id="city" required
                        placeholder="{{ trans('main.cart.placeholders.city') }}">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="delivery" class="col-md-4 col-form-label">{{ trans('main.cart.labels.delivery.general') }}</label>
+              <div class="col-md-8">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="0" checked>
+                  <label class="form-check-label" for="delivery1">
+                    {{ trans('main.cart.labels.delivery.no') }}
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="delivery" id="delivery2" value="1">
+                  <label class="form-check-label" for="delivery2">
+                    {{ trans('main.cart.labels.delivery.yes') }}
+                  </label>
+                </div>
               </div>
             </div>
 
