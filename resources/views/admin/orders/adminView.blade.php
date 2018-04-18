@@ -89,6 +89,7 @@
           <th>Название</th>
           <th>Количество</th>
           <th>Цена</th>
+          <th>Сумма</th>
         </thead>
         <tbody>
           @foreach($order->products as $product)
@@ -104,6 +105,9 @@
               </td>
               <td>
                 {{ uah($product->pivot->price) }}
+              </td>
+              <td>
+                {{ uah($product->price * $product->pivot->quantity) }}
               </td>
             </tr>
           @endforeach
