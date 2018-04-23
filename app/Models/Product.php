@@ -42,7 +42,7 @@ class Product extends Model implements Buyable
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function orders() {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class)->withPivot(['price','quantity']);
     }
 
     # Buyable implementatio
