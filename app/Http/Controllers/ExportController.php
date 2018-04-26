@@ -35,7 +35,6 @@ class ExportController extends Controller
         $products = Product::all();
 
         $callback = function () use ($products, $writer) {
-            $file = fopen('php://output', 'w');
             $writer->openToFile('php://output');
 
             $writer->addRow(["Название", "Цена", "Количество", "Сумма"]);
@@ -58,7 +57,6 @@ class ExportController extends Controller
             }
 
             $writer->close();
-            fclose($file);
         };
 
         return response()->stream($callback, 200, $headers);
