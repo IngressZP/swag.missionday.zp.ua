@@ -82,6 +82,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::delete('/product/delete/{product}', 'ProductController@delete')
         ->name('admin.products.delete');
 
+    # Export routes
+    Route::get('/export', 'ExportController@show')
+        ->name('admin.export');
+    Route::get('/export/quantity', 'ExportController@exportByQuantity')
+        ->name('admin.export.quantity');
 
     # User settings routes
     Route::get('/settings', 'PageController@adminSettings')
