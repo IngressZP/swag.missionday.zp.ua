@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     chmod 777 /var/www/
     apt-get update
     apt-get upgrade -y
-    apt-get install -y nginx php-fpm php-mcrypt php-zip php-xml php-mbstring
+    apt-get install -y nginx php-fpm php-mcrypt php-zip php-xml php-mbstring php-curl composer
     debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
     debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
     apt-get -y install mysql-server
