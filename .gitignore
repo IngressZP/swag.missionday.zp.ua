@@ -17,3 +17,6 @@ npm-debug.log
 yarn-error.log
 .env
 ubuntu-xenial-16.04-cloudimg-console.log
+
+package-lock.json
+composer.lock
