@@ -49,7 +49,7 @@ class ExportController extends Controller
 
                 $num = 0;
                 foreach ($product->orders as $order) {
-                    if (!$order->order_status->id === $cancelled->id) {
+                    if ($order->order_status->id !== $cancelled->id) {
                         $num += $order->pivot->quantity;
                     }
                 }
