@@ -14,7 +14,7 @@ class AddOrderProductPrice extends Migration
     public function up()
     {
         Schema::table('order_product', function (Blueprint $table) {
-            $table->integer('price')->unsigned();
+            $table->integer('price')->unsigned()->nullable();
         });
     }
 

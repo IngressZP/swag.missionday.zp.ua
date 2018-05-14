@@ -9,6 +9,7 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "box/spout": "^2.7",
         "dimsav/laravel-translatable": "^8.0",
+        "doctrine/dbal": "^2.7",
         "fideloper/proxy": "~3.3",
         "gloudemans/shoppingcart": "^2.5",
         "laravel/framework": "5.5.*",
