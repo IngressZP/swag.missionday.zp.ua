@@ -61,7 +61,7 @@ class CartController extends Controller
             'phone' => $request->get('phone'),
             'city' => $request->get('city'),
             'comment' => $request->get('comment'),
-            'total' => Cart::subtotal(),
+            'total' => intval(str_replace(',', '', Cart::subtotal())),
             'delivery' => $request->get('delivery', true),
         ]);
 
