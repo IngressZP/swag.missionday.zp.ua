@@ -46,8 +46,16 @@ gulp.task('build:img', function () {
 gulp.task('build', ['build:js', 'build:css', 'build:img', 'build:fonts']);
 
 gulp.task('watch', function () {
-    watch(['./resources/assets/**/*'], function () {
-        gulp.run('build');
+    watch(['./resources/assets/js/**/*'], function () {
+        gulp.run('build:js');
+    });
+
+    watch(['./resources/assets/scss/**/*'], function () {
+        gulp.run('build:css');
+    });
+
+    watch(['./resources/assets/img/**/*'], function () {
+        gulp.run('build:img');
     });
 });
 
