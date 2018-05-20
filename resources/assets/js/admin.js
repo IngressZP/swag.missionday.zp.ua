@@ -22,6 +22,8 @@ function filter_table(name) {
             let nick = cells.eq(index).text().toLowerCase();
             if (!nick.includes(search)) {
                 row.style.display = 'none';
+            } else {
+                row.style.display = '';
             }
         } else {
             row.style.display = '';
