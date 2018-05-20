@@ -4,3 +4,15 @@
 .order_status_select {
   max-width: 200px;
 }
+
+.orders-table {
+  &_telegram-nick,
+  &_ingress-nick {
+    text-decoration: none;
+    color: #212529;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

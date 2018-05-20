@@ -82,3 +82,13 @@ $('body').on('change', '[name="order_status_filter"]', function (e) {
         }
     }
 });
+
+$('body').on('click', '.orders-table_telegram-nick', function (e) {
+    e.preventDefault();
+    $('[name="telegram_nick"]').val($(this).text()).trigger('input');
+});
+
+$('body').on('click', '.orders-table_ingress-nick', function (e) {
+    e.preventDefault();
+    $('[name="ingress_nick"]').val($(this).text()).trigger('input');
+});

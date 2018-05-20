@@ -54,8 +54,12 @@
               @endforeach
             </select>
           </td>
-          <td>{{ $order->telegram_nick }}</td>
-          <td>{{ $order->ingress_nick }}</td>
+          <td>
+            <a href="#" class="orders-table_telegram-nick">{{ $order->telegram_nick }}</a>
+          </td>
+          <td>
+            <a href="#" class="orders-table_ingress-nick">{{ $order->ingress_nick }}</a>
+          </td>
           <td>{{ uah($order->total) }}</td>
           <td>
               {{ $order->created_at->format('d-m-Y H:i') }}
