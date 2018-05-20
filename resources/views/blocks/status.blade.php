@@ -6,8 +6,10 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-  @endif
-  @if(session('error'))
+  </div>
+@endif
+@if(session('error'))
+  <div class="container my-4">
     <div class="alert alert-danger alert-dismissible fade show">
       {!! session('error') !!}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">

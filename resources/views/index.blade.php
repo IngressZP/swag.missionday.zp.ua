@@ -15,17 +15,12 @@
            class="col-lg d-flex align-items-center justify-content-center category">
           <span>{{ trans('main.categories.all') }}</span>
         </a>
-        <div class="category-separator d-flex align-items-center"><div></div></div>
       @endif
       @foreach ($cats as $cat)
         <a href="/?category={{ $cat->id }}"
            class="col-lg d-flex align-items-center justify-content-center category @if($cat->id == $category) active @endif">
           <span>{{ $cat->title }}</span>
         </a>
-
-        @if (!$loop->last)
-          <div class="category-separator d-flex align-items-center"><div></div></div>
-        @endif
       @endforeach
     </div>
   </div>
