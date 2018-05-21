@@ -64,7 +64,7 @@
               {{ $order->created_at->format('d-m-Y H:i') }}
             </td>
           </tr>
-          {{--<tr>
+          <tr>
             <th>Действия</th>
             <td>
               <form action="{{ route('admin.orders.delete', ['order' => $order->id]) }}" method="post" class="d-inline-block">
@@ -75,7 +75,7 @@
                 </button>
               </form>
             </td>
-          </tr>--}}
+          </tr>
         </tbody>
       </table>
     </div>
