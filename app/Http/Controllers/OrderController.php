@@ -50,6 +50,6 @@ class OrderController extends Controller
     public function delete(Order $order) {
         $order->delete();
 
-        return redirect()->route('admin.orders.list');
+        return redirect()->route('admin.orders.index');
     }
 }
