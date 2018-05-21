@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
-use \Dimsav\Translatable\Translatable;
+use Dimsav\Translatable\Translatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model implements Buyable
 {
     use Translatable;
+    use SoftDeletes;
 
     public $translatedAttributes = [
         'name',
