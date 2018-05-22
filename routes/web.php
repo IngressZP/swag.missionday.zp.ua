@@ -79,6 +79,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         ->name('admin.products.edit');
     Route::post('/product/update/{product}', 'ProductController@update')
         ->name('admin.products.update');
+    Route::post('/products/hide/{product}', 'ProductController@hide')
+        ->name('admin.products.hide');
     Route::delete('/product/delete/{product}', 'ProductController@delete')
         ->name('admin.products.delete');
 

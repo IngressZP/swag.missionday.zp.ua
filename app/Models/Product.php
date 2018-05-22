@@ -20,6 +20,7 @@ class Product extends Model implements Buyable
     protected $fillable = [
         'price',
         'category_id',
+        'hidden',
     ];
 
     protected $dates = [

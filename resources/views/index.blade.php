@@ -35,13 +35,19 @@
           <div class="card-body">
             <a class="product__title" href="{{ route('product.view', ['product' => $product->id]) }}">{{$product->name}}</a>
             <div class="product__price">{{ uah($product->price) }}</div>
-            <form action="{{ route('cart.add') }}" method="post">
-              {!! csrf_field() !!}
-              <input type="hidden" name="product" value="{{ $product->id }}">
-              <button class="button order btn btn-primary product__order" type="submit">
-                <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
+            @if($product->hidden)
+              <button class="button order btn btn-secondary product__order" disabled>
+                {{ trans('main.product.out') }}
               </button>
-            </form>
+            @else
+              <form action="{{ route('cart.add') }}" method="post">
+                {!! csrf_field() !!}
+                <input type="hidden" name="product" value="{{ $product->id }}">
+                <button class="button order btn btn-primary product__order" type="submit">
+                  <i class="fas fa-shopping-cart"></i> {{ trans('main.product.order') }}
+                </button>
+              </form>
+            @endif
           </div>
         </div>
       @endforeach

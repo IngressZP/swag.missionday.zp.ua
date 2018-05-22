@@ -88,6 +88,12 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
 
+    public function hide(Product $product, Request $request) {
+        $product->hidden = $request->get('hidden');
+        $product->save();
+        return redirect()->back();
+    }
+
     public function delete(Product $product, Request $request) {
         try {
             $product->delete();

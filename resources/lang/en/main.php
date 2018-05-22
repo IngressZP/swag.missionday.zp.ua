@@ -10,6 +10,7 @@ return [
     'product' => [
         'order' => 'Order',
         'buy' => 'Buy',
+        'out' => 'Out of stock',
     ],
     'cart' => [
         'order-success' => "<h3>Thank you! Your order is being processed.</h3> <br> We will contact you soon to clarify order and payment details.",

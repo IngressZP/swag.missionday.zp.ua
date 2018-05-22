@@ -58,6 +58,21 @@
                     <i class="fas fa-save"></i> Сохранить
                 </button>
             </form>
+
+            <form class="my-5 justify-content-center text-center" action="{{ route('admin.products.hide', ['product' => $product]) }}" method="post">
+                {!! csrf_field() !!}
+                @if($product->hidden)
+                    <input type="hidden" name="hidden" value="0">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-eye"></i> Отобразить товар
+                    </button>
+                @else
+                    <input type="hidden" name="hidden" value="1">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-eye-slash"></i> Скрыть товар
+                    </button>
+                @endif
+            </form>
         </div>
     </div>
 @endsection

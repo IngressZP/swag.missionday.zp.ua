@@ -33,7 +33,7 @@ class CartController extends Controller
         $product = Product::find($request->get('product'));
         $quantity = $request->get('quantity', 1);
 
-        if ($product) {
+        if ($product && !$product->hidden) {
             Cart::add($product, $quantity);
         }
 
