@@ -17,10 +17,10 @@ class PageController extends Controller
     public function index(Request $request) {
         if ($request->has('category')) {
             $category = $request->get('category');
-            $products = Product::where('category_id', $category)->get();
+            $products = Product::where('category_id', $category)->orderBy('hidden', 'desc')->get();
         } else {
             $category = 0;
-            $products = Product::all();
+            $products = Product::orderBy('hidden', 'desc')->get();
         }
 
         return view('index', [
@@ -36,7 +36,6 @@ class PageController extends Controller
     }
 
     public function adminIndex() {
-//        return view('admin.index');
         return redirect()->route('admin.orders.index');
     }
 
