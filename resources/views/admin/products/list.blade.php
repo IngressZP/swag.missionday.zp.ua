@@ -48,16 +48,31 @@
                     <td>{{ uah($product->price) }}</td>
                     <td><a href="{{ route('admin.products.edit', ['product' => $product]) }}">Просмотр</a></td>
                     <td>
+                        <form class="d-inline-block" action="{{ route('admin.products.hide', ['product' => $product]) }}" method="post">
+                            {!! csrf_field() !!}
+                            @if($product->hidden)
+                                <input type="hidden" name="hidden" value="0">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            @else
+                                <input type="hidden" name="hidden" value="1">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-eye-slash"></i>
+                                </button>
+                            @endif
+                        </form>
+
                         <a href="{{ route('admin.products.edit', ['product' => $product->id]) }}" class="btn btn-primary">
                             <i class="fas fa-pencil-alt"></i>
                         </a>
-                        <form action="{{ route('admin.products.delete', ['product' => $product->id]) }}" method="post" class="d-inline-block">
+                        {{-- <form action="{{ route('admin.products.delete', ['product' => $product->id]) }}" method="post" class="d-inline-block">
                             {!! csrf_field() !!}
                             <input type="hidden" name="_method" value="delete">
                             <button class="btn btn-danger">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
             @endforeach
