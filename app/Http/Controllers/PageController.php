@@ -17,10 +17,10 @@ class PageController extends Controller
     public function index(Request $request) {
         if ($request->has('category')) {
             $category = $request->get('category');
-            $products = Product::where('category_id', $category)->orderBy('hidden')->get();
+            $products = Product::where('category_id', $category)->where('hidden', false)->get();
         } else {
             $category = 0;
-            $products = Product::orderBy('hidden')->get();
+            $products = Product::where('hidden', false)->get();
         }
 
         return view('index', [

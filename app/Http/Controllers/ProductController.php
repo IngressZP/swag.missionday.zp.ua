@@ -10,7 +10,7 @@ use Storage;
 class ProductController extends Controller
 {
     public function index() {
-        $products = Product::orderBy('category_id')->get();
+        $products = Product::orderBy('hidden')->orderBy('category_id')->get();
 
         return view('admin.products.list', [
             'products' => $products,
