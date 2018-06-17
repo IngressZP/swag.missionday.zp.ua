@@ -34,9 +34,9 @@ class ExportController extends Controller
 
         $writer = WriterFactory::create(Type::XLSX);
         $products = Product::all();
-        $cancelled = OrderStatus::where('title', 'отменён')->firstOrFail();
+        $filterStatus = OrderStatus::whereIn('title', ['отменён', 'отправлено'])->get()->pluck('id')->toArray();
 
-        $callback = function () use ($products, $cancelled, $writer) {
+        $callback = function () use ($products, $filterStatus, $writer) {
             $writer->openToFile('php://output');
 
             $writer->addRow(["Название", "Цена", "Количество", "Сумма"]);
@@ -49,7 +49,7 @@ class ExportController extends Controller
 
                 $num = 0;
                 foreach ($product->orders as $order) {
-                    if ($order->order_status->id !== $cancelled->id) {
+                    if (!in_array($order->order_status->id, $filterStatus)) {
                         $num += $order->pivot->quantity;
                     }
                 }
