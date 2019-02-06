@@ -44,25 +44,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <meta name="theme-color" content="#ea5b0c"> <!-- will change the adressbar color on android chrome -->
-
-  @env('production')
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110193834-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-110193834-2');
-    </script>
-@endenv
 </head>
 <body>
   @yield('content')
 
   @section('scripts')
-    <script src="https://cdn.ravenjs.com/3.24.1/raven.min.js" crossorigin="anonymous"></script>
-    <script>Raven.config('https://e668606066534872b6a8f0e9ef5220d7@sentry.io/1188827').install()</script>
     <script src="/js/main.min.js"></script>
   @show
 </body>
